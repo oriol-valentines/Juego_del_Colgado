@@ -9,12 +9,6 @@ public class El_Juego_del_Colgado {
 		// TODO Auto-generated method stub
 		
 		
-		//VARIABLES PARA EL JUEGO
-		String partida;
-		String palabras;
-		String[] palabrasS;
-		boolean palabraEncontrada = false;
-				
 		//ENTRADA DE INFO 
 		Scanner x = new Scanner(System.in);
 				
@@ -25,10 +19,12 @@ public class El_Juego_del_Colgado {
 		System.out.println("|_____________________|");
 				
 		//INTRODUCIR LA PALABRA SECRETA
+		String palabras;
+		char[] palabrasS;
 		System.out.print("Introduce la palabra secreta: " );
 		palabras = x.nextLine().toLowerCase();
-		palabrasS = palabras.split(" "); //EL SPLIT SEPARA LOS CARACTERES PARA PODER GUARDARLOS 
-		// palabrasS = palabras.toCharArray(); ESTA ES OTRA FORMA PARA INSERTAR LA PALABRA EN EL ARRAY VACIO
+		//palabrasS = palabras.split(" "); //EL SPLIT SEPARA LOS CARACTERES PARA PODER GUARDARLOS 
+		palabrasS = palabras.toCharArray(); //ESTA ES OTRA FORMA PARA INSERTAR LA PALABRA EN EL ARRAY VACIO
 		
 		/* for (int i = 0; i<palabrasS.length; i++) { //PRUEBA PARA VER SI MUESTRA LA PALABRA SECRETA
 			System.out.print(palabrasS[i]);
@@ -56,18 +52,32 @@ public class El_Juego_del_Colgado {
 		while(true) {
 			
 			for (int i = 0; i < jugadores.length; i++) {
-				System.out.println("Jugador " + jugadores[i]);
+				System.out.println("__________________________");
+				System.out.println(" ");
+				System.out.println("Jugador: " + (i + 1));
+				System.out.println("Vidas Restantes: " + vidas[i]);
+				
+				for (int j = 0; j < progreso.length; j++) {
+					System.out.print(progreso[i]);
+				}System.out.print(" ");
+				
+				System.out.print("Inserta la letra que creas correcta: ");
+				char letra = x.next().toLowerCase().charAt(0);
+				
+				boolean acierto = false;
+				for (int j = 0; j < palabrasS.length; j++) {
+					if(palabrasS[j] == letra) {
+						progreso[j] = letra;
+						acierto = true;
+					}
+				}
+				
 			}
 			
-			System.out.print("Inserta la letra que creas que va a aparecer en el texto: ");
-			char letra = x.next().toLowerCase().charAt(0);
+
 			
-			for (int i = 0; i < palabrasS.length; i++) {
-				if(palabrasS[i].charAt(i) == letra) {
-					progreso[i] = letra;
-					palabraEncontrada = true;
-				}
-			}System.out.print("");
+			
+			}
 			
 		}
 		
@@ -75,7 +85,7 @@ public class El_Juego_del_Colgado {
 			
 			
 					
-					
+
 					
 					
 		
