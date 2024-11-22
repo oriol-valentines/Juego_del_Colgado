@@ -37,6 +37,7 @@ public class El_Juego_del_Colgado {
 		int jugadoresNum = x.nextInt();
 		
 		if(jugadoresNum <= 1) {
+			System.out.println(" ");
 			System.out.println("NO PUEDEN JUGAR MENOS DE DOS PERSONAS!!");
 			System.out.print("¿Cuantos jugadores quieren jugar (MINIMO 2)? ");
 			jugadoresNum = x.nextInt();
