@@ -72,7 +72,15 @@ public class El_Juego_del_Colgado {
 					}
 				}
 				
-			}
+				if(acierto) {
+					System.out.print("---------------------------------");
+					System.out.print("Has acertado la letra, MUY BIEN!!");
+					System.out.print("La letra acertada es: " + letra);
+					System.out.print("---------------------------------");
+				}else {
+					System.out.print("No has acertado la letra!!");
+					vidas[i]--;
+				}
 			
 
 			
